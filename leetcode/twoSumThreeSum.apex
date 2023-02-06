@@ -27,6 +27,7 @@ public class twoSumThreeSum {
         return resultToReturn;
     }
     
+    //three sum is same as 2 sum , we just need to fix the first element
     public static list<list<integer>> threeSum(list<integer> nums,integer target){
         list<list<integer>> resultToReturn=new List<list<integer>>();
         //sort the list
