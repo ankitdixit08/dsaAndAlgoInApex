@@ -64,11 +64,18 @@ public class LinkedList {
         size--;
         return temp.data;
     }
-
-
-
-     //get value  at index
-     public object getAt(integer idx){
+    
+    
+    //get last element 
+    public object getLast(){
+        if(size==0){
+            return null;
+        }
+        return tail.data;
+    }
+    
+    //get value  at index
+    public object getAt(integer idx){
         if(size==0 || idx>=size || idx<0){
             return null;
         }else{
@@ -79,4 +86,19 @@ public class LinkedList {
             return temp.data;
         }
     }
+    
+    
+    //add first element
+    public void addFirst(object newData){
+        //create a new node
+        Node temp=new Node();
+        //store the data
+        temp.data=newData;
+        //point it to current head 
+        temp.next=head;
+        //declare temp node as new head
+        head=temp;
+    }
+    
+    
 }
