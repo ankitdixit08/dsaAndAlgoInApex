@@ -34,6 +34,7 @@ public class LinkedList {
         while(temp!=null){
             displayLinkedListValues.add(temp.data);
             temp=temp.next;
+            system.debug(temp);
             
         }
         return displayLinkedListValues;
@@ -43,5 +44,24 @@ public class LinkedList {
     //display the size of the linkedlist
     public integer size(){
         return size;
+    }
+    
+    
+    //remove first element
+    public object removeFirst(){
+        Node temp=new Node();
+        if(size==0){
+            return null;
+        }else if(size==1){
+            temp=head;
+            head=null;
+            tail=null;
+            return temp.data;
+        }else{
+             temp=head;
+             head=head.next;
+        } 
+        size--;
+        return temp.data;
     }
 }
