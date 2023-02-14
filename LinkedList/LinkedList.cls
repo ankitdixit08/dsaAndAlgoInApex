@@ -1,13 +1,14 @@
 public class LinkedList {
 
+    //each cell in a linkedlist is denoted as a node and it contains data and a pointer to next element.
     public class Node {
         public object data;
         public Node next;
     }
 
 
-    public Node head;
-    public Node tail;
+    public Node head;  //this denotes first element of a linkedList
+    public Node tail;   //this denotes the last element of a linkedList
     public integer size=0;
     
     //add element to end of the linkedList
