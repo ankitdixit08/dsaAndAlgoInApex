@@ -64,4 +64,19 @@ public class LinkedList {
         size--;
         return temp.data;
     }
+
+
+
+     //get value  at index
+     public object getAt(integer idx){
+        if(size==0 || idx>=size || idx<0){
+            return null;
+        }else{
+            Node temp= head;
+            for(integer i=0;i<idx;i++){
+                temp=temp.next;
+            }
+            return temp.data;
+        }
+    }
 }
