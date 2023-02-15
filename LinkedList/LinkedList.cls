@@ -1,12 +1,12 @@
 public class LinkedList {
-
+    
     //each cell in a linkedlist is denoted as a node and it contains data and a pointer to next element.
     public class Node {
         public object data;
         public Node next;
     }
-
-
+    
+    
     public Node head;  //this denotes first element of a linkedList
     public Node tail;   //this denotes the last element of a linkedList
     public integer size=0;
@@ -26,7 +26,7 @@ public class LinkedList {
         size++;
     }
     
-
+    
     //display all the items of the linkedList
     public list<Object> display(){
         list<Object> displayLinkedListValues=new list<Object>();
@@ -40,7 +40,7 @@ public class LinkedList {
         return displayLinkedListValues;
     }
     
-
+    
     //display the size of the linkedlist
     public integer size(){
         return size;
@@ -58,8 +58,8 @@ public class LinkedList {
             tail=null;
             return temp.data;
         }else{
-             temp=head;
-             head=head.next;
+            temp=head;
+            head=head.next;
         } 
         size--;
         return temp.data;
@@ -119,11 +119,11 @@ public class LinkedList {
             for(integer i=0;i<idx-1;i++){
                 temp=temp.next;
             }
-             newNode.next=temp.next;
+            newNode.next=temp.next;
             temp.next=newNode;
             size++;
         }
-           
+        
     }
     
     //remove last element from the list
@@ -145,5 +145,65 @@ public class LinkedList {
             size--;
         }
     }
+    
+    private node getNodeAt(integer idx){
+        if(size==0 || idx>=size || idx<0){
+            return null;
+        }else{
+            Node temp= head;
+            for(integer i=0;i<idx;i++){
+                temp=temp.next;
+            }
+            return temp;
+        }
+    }
+    
+    //reverse linkedlist data 
+    public void reverseDi(){
+        integer  li=0;
+        integer ri=size-1;
+        while(li<ri){
+            Node left=getNodeAt(li);
+            Node right=getNodeAt(ri);
+            
+            object temp=left.data;
+            left.data=right.data;
+            right.data=temp;
+            li++;
+            ri--;
+        }
+        
+    }
+    
+    
+    //reverse linkedList data pointer iterator
+    public void reversePi(){
+        Node prev=null;
+        Node curr=head;
+        while(curr!=null){
+            node nextNode=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=nextNode;
+        }
+        Node temp=head;
+        head=tail;
+        tail=temp;
+    }
+    
+    //remove at index
+    public void removeAt(integer idx){
+        if(idx>size || size==0 || idx<0){
+            return;
+        }else{
+            Node temp=head;
+            for(integer i=0;i<idx-1;i++){
+                temp=temp.next;
+            }
+            temp.next=temp.next.next;
+            size--;
+        }
+    }
+    
     
 }
