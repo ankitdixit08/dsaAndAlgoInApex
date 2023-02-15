@@ -98,7 +98,52 @@ public class LinkedList {
         temp.next=head;
         //declare temp node as new head
         head=temp;
+        //increase the size
+        size++;
     }
     
+    
+    //add at index
+    public void addAt(integer idx, object value){
+        if(idx<0 || idx>size){
+            return;
+        }else if(size==0){
+            addFirst(value);
+        }else if(size==idx){
+            addLast(value);
+        }else{
+            Node newNode=new Node();
+            newNode.data=value;
+            
+            node temp=head;
+            for(integer i=0;i<idx-1;i++){
+                temp=temp.next;
+            }
+             newNode.next=temp.next;
+            temp.next=newNode;
+            size++;
+        }
+           
+    }
+    
+    //remove last element from the list
+    public void removeLast(){
+        if(size==0){
+            return;
+        }else if(size==1){
+            tail.data=null;
+            tail.next=null;
+            head=tail;
+            size=0;
+        }else{
+            Node temp=head;
+            for(integer i=0;i<size-2;i++){
+                temp=temp.next;
+            }
+            tail=temp;
+            tail.next=null;
+            size--;
+        }
+    }
     
 }
