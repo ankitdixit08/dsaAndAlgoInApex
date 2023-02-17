@@ -207,3 +207,26 @@ public class LinkedList {
     
     
 }
+
+
+
+/**
+ * call linkedlist
+linkedList ll=new LinkedList();
+ll.addLast(5);
+ll.addLast(4);
+ll.addLast(25);
+ll.addLast(56);
+ll.addLast(54);
+ll.addLast(75);
+ll.addLast(85);
+
+system.debug(ll);
+//ll.addAt(2,17);
+//ll.removeLast();
+ll.removeAt(2);
+system.debug(ll);
+ * 
+ * 
+ * 
+ */
